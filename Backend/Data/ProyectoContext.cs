@@ -10,8 +10,8 @@ namespace Backend.Data
 
         }
 
-        public DbSet<Aviso> Avisos { get; set; }
         public DbSet<Directorio> Directorio { get; set; }
+        public DbSet<Aviso> Avisos { get; set; }
 
     }
 }

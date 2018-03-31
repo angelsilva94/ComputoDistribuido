@@ -6,6 +6,5 @@ namespace Backend.Models
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public bool Imagen { get; set; }
-        
     }
 }
