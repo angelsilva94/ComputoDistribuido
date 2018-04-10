@@ -26,8 +26,10 @@ namespace Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=Proyecto;Trusted_Connection=True;ConnectRetryCount=0";
-            services.AddDbContext<ProyectoContext>(options => options.UseSqlServer(connection));
+            // var connection = @"Data Source=localhost;Initial Catalog=Proyecto;User ID=SA;Password=Angel.$ilva;Trusted_Connection=False;";
+            var connection = @"server=localhost;database=UAADb;user=root;password=angel.silva";            
+            // services.AddDbContext<ProyectoContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<ProyectoContext>(options => options.UseMySQL(connection));
 
         }
 

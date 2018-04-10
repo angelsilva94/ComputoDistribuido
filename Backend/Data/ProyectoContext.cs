@@ -5,9 +5,13 @@ namespace Backend.Data
 {
     public class ProyectoContext : DbContext
     {
-        public ProyectoContext (DbContextOptions<ProyectoContext> options) : base (options)
+        public ProyectoContext(DbContextOptions<ProyectoContext> options) : base(options)
         {
 
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySQL("server=localhost;database=UAADb;user=root;password=angel.silva");
         }
 
         public DbSet<Directorio> Directorio { get; set; }
