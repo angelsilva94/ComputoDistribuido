@@ -11,7 +11,7 @@ import DirectorioNuevo from './components//Directorio/DirectorioNuevo.vue'
 
 export const routes = [
     {path:'',component: Principal},    
-    {path:'/directorio',component: Directorio, children:
+    {path:'/directorio',name:'directorio',component: Directorio, children:
         [
             {path:'nuevo',component:DirectorioNuevo, name: 'userAdd'},            
             {path:':id',component: DirectorioDetalle},
