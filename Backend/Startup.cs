@@ -25,6 +25,7 @@ namespace Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+	    services.AddCors();
             services.AddMvc();
             // var connection = @"Data Source=localhost;Initial Catalog=Proyecto;User ID=SA;Password=Angel.$ilva;Trusted_Connection=False;";
             var connection = @"server=localhost;database=UAADb;user=root;password=angel.silva";            
@@ -40,6 +41,12 @@ namespace Backend
             {
                 app.UseDeveloperExceptionPage();
             }
+	    app.UseCors (b => b.WithOrigins ("http:/192.168.88.149")
+                .AllowAnyOrigin ()
+                .AllowCredentials ()
+                .AllowAnyMethod ()
+                .AllowAnyHeader ());
+
 
             app.UseMvc();
         }
