@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Backend.Data;
@@ -41,7 +42,11 @@ namespace Backend
             {
                 app.UseDeveloperExceptionPage();
             }
-	    app.UseCors (b => b.WithOrigins ("http:/192.168.88.149")
+            // if (string.IsNullOrWhiteSpace(env.WebRootPath))
+            // {
+            //     env.WebRootPath = $"/var/www/html/imagenes";
+            // }
+	        app.UseCors (b => b.WithOrigins ("http:/192.168.88.149")
                 .AllowAnyOrigin ()
                 .AllowCredentials ()
                 .AllowAnyMethod ()

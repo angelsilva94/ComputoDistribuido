@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import {routes} from './routes.js'
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://35.231.105.59:5000/api';
+axios.defaults.baseURL = 'http://localhost:5000/api';
 
 
 Vue.use(VueRouter);
