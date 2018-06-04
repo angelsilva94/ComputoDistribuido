@@ -66,14 +66,18 @@ namespace Backend.Controllers
             {
                 try
                 {
-                    if (imagen.Length > 0)
+                    if (imagen != null)
                     {
-                        var filePath = Path.GetFileNameWithoutExtension(imagen.FileName)+Guid.NewGuid()+Path.GetExtension(imagen.FileName);
+                        var filePath = Path.GetFileNameWithoutExtension(imagen.FileName) + Guid.NewGuid() + Path.GetExtension(imagen.FileName);
                         using (var fs = new FileStream(Path.Combine($"/var/www/html/imagenes", filePath), FileMode.Create))
                         {
                             await imagen.CopyToAsync(fs);
                             aviso.Imagen = filePath;
                         }
+                    }
+                    if (imagen == null)
+                    {
+                        aviso.Imagen = "";
                     }
                     await this.context.Avisos.AddAsync(aviso);
                     await this.context.SaveChangesAsync();
