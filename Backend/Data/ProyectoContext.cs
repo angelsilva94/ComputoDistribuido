@@ -12,6 +12,8 @@ namespace Backend.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySQL("server=35.231.105.59;port=3306;database=UAADb;user=root;password=angel.silva");
+            // optionsBuilder.UseMySQL("server=localhost;database=UAADb;user=root;password=angel.silva");
+            
         }
 
         public DbSet<Directorio> Directorio { get; set; }

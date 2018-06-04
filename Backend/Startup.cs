@@ -29,7 +29,8 @@ namespace Backend
 	    services.AddCors();
             services.AddMvc();
             // var connection = @"Data Source=localhost;Initial Catalog=Proyecto;User ID=SA;Password=Angel.$ilva;Trusted_Connection=False;";
-            var connection = @"server=35.231.105.59;port=3306;database=UAADb;user=root;password=angel.silva";            
+            var connection = @"server=35.231.105.59;port=3306;database=UAADb;user=root;password=angel.silva";   
+            // var connection = @"server=localhost;database=UAADb;user=root;password=angel.silva";                                 
             // services.AddDbContext<ProyectoContext>(options => options.UseSqlServer(connection));
             services.AddDbContext<ProyectoContext>(options => options.UseMySQL(connection));
 
